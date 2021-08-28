@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	"log"
-	"net/http"
 	"github.com/Tomonaga007/bookings/pkg/config"
 	"github.com/Tomonaga007/bookings/pkg/models"
 	"github.com/Tomonaga007/bookings/pkg/render"
+	"log"
+	"net/http"
 )
 
 
@@ -27,7 +27,6 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request)  {
 	remoteIP := r.RemoteAddr
 	log.Println(remoteIP)
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
-
 	render.RenderTemplate(w, "home.page.tmpl", &models.TemplateData{})
 }
 

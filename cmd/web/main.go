@@ -16,7 +16,7 @@ var session *scs.SessionManager
 
 func main() {
 	var app config.AppConfig
-	app.InProduction = false
+	app.InProduction = true
 
 	session = scs.New()
 	session.Lifetime = 24* time.Hour
