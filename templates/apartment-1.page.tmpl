@@ -1,0 +1,61 @@
+{{template "base" .}}
+{{define "content"}}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-6 col-sm-12">
+                <img src="/static/images/generals-quarters.png"
+                     class="img-fluid img-thumbnail mx-auto d-block room-image" alt="room image">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center mt-5">Apartment 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus pretium urna nec tincidunt. Ut
+                    congue fermentum massa, convallis gravida dolor. Curabitur sed mattis justo. Donec in rutrum libero,
+                    in consectetur enim. Aliquam erat volutpat. Donec ipsum dolor, semper ullamcorper iaculis quis,
+                    malesuada ac enim. Vestibulum ut bibendum dolor. Etiam vel nulla mauris. Sed scelerisque est non
+                    fringilla cursus. Morbi metus enim, ullamcorper id elit nec, volutpat faucibus elit. Ut ornare,
+                    tellus eget convallis sollicitudin, mi erat viverra nunc, ac elementum felis nisi ut nisl. Etiam
+                    quis ornare lacus.</p>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+            <div class="col text-center">
+
+                <a id="check-availability-btn" href="#" class="btn btn-success"> Check Availability</a>
+            </div>
+        </div>
+
+
+    </div>
+{{end}}
+
+{{define "js"}}
+<script>
+
+    document.getElementById("check-availability-btn").addEventListener("click", function (){
+        let html = `
+      <form method="post" id="check-availability-form" action="" class="needs-validation" autocomplete="off" novalidate>
+          <div class="row" id="reservation-dates-modal">
+          <div class="col-md-6">
+            <input disabled required type="text" class="form-control" id="start" name="start" placeholder="Arival Date">
+          </div>
+          <div class="col-md-6">
+            <input disabled required type="text" class="form-control" id="end" name="end" placeholder="Departure Date">
+          </div>
+          </div>
+        </form>
+    `
+        attentinon.custom({msg:html, title:"Choose Your Dates"})
+    })
+</script>
+{{end}}
