@@ -9,7 +9,8 @@
                 <h1 class="text-center mt-5">Make reservation</h1>
 
 
-                <form method="POST" action="" class="row g-3 needs-validation" novalidate>
+                <form method="POST" action="/make-reservation" class="row g-3 needs-validation" novalidate>
+                    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
                     <div class="col-md-6">
                         <label for="first_name" class="form-label">First Name</label>
                         <input required type="text" class="form-control" id="first_name" name="first_name"

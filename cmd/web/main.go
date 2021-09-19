@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/Tomonaga007/bookings/pkg/config"
-	"github.com/Tomonaga007/bookings/pkg/handlers"
-	"github.com/Tomonaga007/bookings/pkg/render"
+	"github.com/Tomonaga007/bookings/internal/config"
+	"github.com/Tomonaga007/bookings/internal/handlers"
+	"github.com/Tomonaga007/bookings/internal/render"
 	"github.com/alexedwards/scs/v2"
 	"log"
 	"net/http"
@@ -34,7 +34,7 @@ func main() {
 	app.UseCache = false
 
 	repo := handlers.NewRepo(&app)
-	handlers.NewHandlres(repo)
+	handlers.NewHandlers(repo)
 
 	render.NewTemplates(&app)
 
